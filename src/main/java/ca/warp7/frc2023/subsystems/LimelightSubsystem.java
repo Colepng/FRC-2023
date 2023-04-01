@@ -41,8 +41,8 @@ public class LimelightSubsystem extends SubsystemBase {
 
     public Command AlignRotation() {
         double rotatePerSecond = MathUtil.clamp(yaw, -3, 3) * -1.0;
-        return run(() ->
-                swerveDrivetrainSubsystem.drive(
+        return run(() -> swerveDrivetrainSubsystem.drive(new Translation2d(0.0, 0.0), rotatePerSecond, true, true));
+    }
                         new Translation2d(0.0, 0.0),
                         rotatePerSecond / 10.0,
                         true,
