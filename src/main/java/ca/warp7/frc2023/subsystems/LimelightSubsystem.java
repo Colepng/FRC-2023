@@ -43,11 +43,11 @@ public class LimelightSubsystem extends SubsystemBase {
         double rotatePerSecond = MathUtil.clamp(yaw, -3, 3) * -1.0;
         return run(() -> swerveDrivetrainSubsystem.drive(new Translation2d(0.0, 0.0), rotatePerSecond, true, true));
     }
-                        new Translation2d(0.0, 0.0),
-                        rotatePerSecond / 10.0,
-                        true,
-                        true)
-        );
+
+    public Command AlignHorizontal() {
+        double xPerSecond = MathUtil.clamp(x, -3, 3) * -1.0;
+        return run(() -> swerveDrivetrainSubsystem.drive(new Translation2d(xPerSecond, 0.0), 0.0, true, true));
+    }
     }
 
     @Override
