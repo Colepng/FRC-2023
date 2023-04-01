@@ -48,6 +48,10 @@ public class LimelightSubsystem extends SubsystemBase {
         double xPerSecond = MathUtil.clamp(x, -3, 3) * -1.0;
         return run(() -> swerveDrivetrainSubsystem.drive(new Translation2d(xPerSecond, 0.0), 0.0, true, true));
     }
+
+    public Command AlignVertical() {
+        double yPerSecond = MathUtil.clamp(y, -3, 3) * -1.0;
+        return run(() -> swerveDrivetrainSubsystem.drive(new Translation2d(0.0, yPerSecond), 0.0, true, true));
     }
 
     @Override
