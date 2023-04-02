@@ -23,7 +23,7 @@ public class LimelightSubsystem extends SubsystemBase {
         botposeTargetspace = botposeTargetspaceEntery.getDoubleArray(new double[6]);
         x = botposeTargetspace[0];
         y = botposeTargetspace[1];
-        yaw = botposeTargetspace[5];
+        yaw = swerveDrivetrainSubsystem.getYawRotation2d().getDegrees();
     }
 
     public double getX() {
@@ -57,6 +57,6 @@ public class LimelightSubsystem extends SubsystemBase {
     public void periodic() {
         x = botposeTargetspace[0];
         y = botposeTargetspace[1];
-        yaw = botposeTargetspace[5];
+        yaw = swerveDrivetrainSubsystem.getYawRotation2d().getDegrees();
     }
 }
